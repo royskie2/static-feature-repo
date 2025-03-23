@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VendorRoute Dashboard - Smart Route Planning for Food Vendors</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <span class="logo-img">🚚</span>
+                    <span>VendorRoute</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                    <li><a href="#">Routes</a></li>
+                    <li><a href="#">Analytics</a></li>
+                    <li><a href="#">Settings</a></li>
+                </ul>
+                <div class="burger">≡</div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Dashboard -->
+    <main class="dashboard-page">
+        <div class="container">
+            <div class="dashboard-header">
+                <h1>Welcome back, Crystal!</h1>
+                <div class="user-profile">
+                    <div class="user-avatar">CJ</div>
+                    <div class="user-info">
+                        <span class="user-name">Crystal Joy Cantos</span>
+                        <span class="user-role">Coffee Vendor</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dashboard-grid">
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <ul class="sidebar-menu">
+                        <li><a href="#" class="active"><i>📊</i> Dashboard</a></li>
+                        <li><a href="#"><i>🗺️</i> Route Planning</a></li>
+                        <li><a href="#"><i>📍</i> Location Analytics</a></li>
+                        <li><a href="#"><i>📈</i> Sales Tracking</a></li>
+                        <li><a href="#"><i>☁️</i> Weather Forecast</a></li>
+                    </ul>
+                    
+                    <div class="sidebar-divider"></div>
+                    
+                    <ul class="sidebar-menu">
+                        <li><a href="#"><i>👥</i> Customer Insights</a></li>
+                        <li><a href="#"><i>🤖</i> AI Recommendations</a></li>
+                        <li><a href="#"><i>💰</i> Dynamic Pricing</a></li>
+                        <li><a href="#"><i>⚙️</i> Settings</a></li>
+                        <li><a href="#"><i>❓</i> Help Center</a></li>
+                    </ul>
+                </aside>
+                
+                <!-- Main Content Area -->
+                <div class="main-content">
+                    <!-- Date Filter -->
+                    <div class="date-filter">
+                        <div class="date-range">
+                            <input type="date" class="date-input" value="2025-03-23">
+                            <span>to</span>
+                            <input type="date" class="date-input" value="2025-03-30">
+                            <button class="btn btn-primary btn-sm">Apply</button>
+                        </div>
+                        <div class="quick-filters">
+                            <button class="btn btn-light btn-sm">Today</button>
+                            <button class="btn btn-light btn-sm">This Week</button>
+                            <button class="btn btn-light btn-sm">This Month</button>
+                            <button class="btn btn-light btn-sm">Custom</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Stats Summary -->
+                    <div class="stats-cards">
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <span class="stat-title">Daily Revenue</span>
+                                <span class="stat-icon">💰</span>
+                            </div>
+                            <div class="stat-value">₱3,250</div>
+                            <div class="stat-change positive">
+                                <span>↑ 15.2%</span> vs yesterday
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <span class="stat-title">Customers</span>
+                                <span class="stat-icon">👥</span>
+                            </div>
+                            <div class="stat-value">95</div>
+                            <div class="stat-change positive">
+                                <span>↑ 8.6%</span> vs yesterday
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <span class="stat-title">Avg. Order Value</span>
+                                <span class="stat-icon">📊</span>
+                            </div>
+                            <div class="stat-value">₱34.20</div>
+                            <div class="stat-change positive">
+                                <span>↑ 5.3%</span> vs yesterday
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <span class="stat-title">Total Distance</span>
+                                <span class="stat-icon">🗺️</span>
+                            </div>
+                            <div class="stat-value">4.8km</div>
+                            <div class="stat-change negative">
+                                <span>↓ 6.5%</span> vs yesterday
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Map & Route Planning Section -->
+                    <div class="optimization-section">
+                        <div class="optimization-header">
+                            <h2 class="optimization-title">Smart Route Planning</h2>
+                            <button class="btn btn-primary">Generate New Route</button>
+                        </div>
+                        
+                        <div class="map-controls">
+                            <div class="map-filters">
+                                <button class="btn btn-light btn-sm">Optimal Route</button>
+                                <button class="btn btn-light btn-sm">High Density Areas</button>
+                                <button class="btn btn-light btn-sm">Weather Overlay</button>
+                                <button class="btn btn-light btn-sm">Traffic Overlay</button>
+                            </div>
+                            <button class="btn btn-secondary btn-sm">Save Route</button>
+                        </div>
+                        
+                        <div class="map-container">
+                            <div class="map-placeholder">
+                                <span>🗺️</span>
+                                <p>Interactive route map of Baliuag, Bulacan will be displayed here</p>
+                                <button class="btn btn-primary btn-sm">Load Map</button>
+                            </div>
+                            <div class="map-overlay" style="display: none;">
+                                <h3>Today's Route</h3>
+                                <p>Estimated time: 3 hours</p>
+                                <p>Total distance: 4.8 km</p>
+                                <div class="route-info">
+                                    <div class="route-dot route-optimal"></div>
+                                    <span>Optimal path</span>
+                                </div>
+                                <div class="route-info">
+                                    <div class="route-dot route-alternative"></div>
+                                    <span>Alternative routes</span>
+                                </div>
+                                <div class="route-info">
+                                    <div class="route-dot route-avoided"></div>
+                                    <span>Areas to avoid</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Data Visualization Section -->
+                    <div class="data-section">
+                        <!-- Sales by Hour Chart -->
+                        <div class="chart-container">
+                            <div class="chart-header">
+                                <div class="chart-title">Sales by Hour</div>
+                                <div class="chart-actions">
+                                    <button class="btn btn-light btn-sm">Daily</button>
+                                    <button class="btn btn-light btn-sm">Weekly</button>
+                                </div>
+                            </div>
+                            <div class="chart-content">
+                                <canvas id="salesByHourChart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <!-- Location Performance Chart -->
+                        <div class="chart-container">
+                            <div class="chart-header">
+                                <div class="chart-title">Location Performance</div>
+                                <div class="chart-actions">
+                                    <button class="btn btn-light btn-sm">Revenue</button>
+                                    <button class="btn btn-light btn-sm">Customers</button>
+                                </div>
+                            </div>
+                            <div class="chart-content">
+                                <canvas id="locationPerformanceChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Location Suggestions Section -->
+                    <div class="location-suggestions">
+                        <div class="suggestion-header">
+                            <div class="suggestion-title">Today's Recommended Locations in Baliuag <span class="badge badge-ai">AI-Powered</span></div>
+                            <button class="btn btn-primary btn-sm">Refresh Suggestions</button>
+                        </div>
+                        <div class="suggestion-cards">
+                            <div class="suggestion-card">
+                                <div class="suggestion-location">Baliuag University Area</div>
+                                <div>Students and faculty looking for coffee and snacks, peak hours 7-9AM and 4-6PM</div>
+                                <div class="weather-info">
+                                    <span class="weather-icon">☀️</span>
+                                    <span>32°C, Sunny</span>
+                                </div>
+                                <div class="suggestion-stats">
+                                    <div class="suggestion-stat">
+                                        <span class="suggestion-value">₱1500+</span>
+                                        <span class="suggestion-label">Est. Revenue</span>
+                                    </div>
+                                    <div class="suggestion-stat">
+                                        <span class="suggestion-value">94%</span>
+                                        <span class="suggestion-label">Confidence</span>
+                                    </div>
+                                    <div class="suggestion-stat">
+                                        <span class="suggestion-value">50+</span>
+                                        <span class="suggestion-label">Customers</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="suggestion-card">
+                                <div class="suggestion-location">Baliuag Public Market <span class="badge badge-hot">Hot</span></div>
+                                <div>Morning shoppers and vendors, best times 6-10AM</div>
+                                <div class="weather-info">
+                                    <span class="weather-icon">☀️</span>
+                                    <span>33°C, Sunny</span>
+                                </div>
+                                <div class="suggestion-stats">
+                                    <div class="suggestion-stat">
+                                        <span class="suggestion-value">₱1250+</span>
+                                        <span class="suggestion-label">Est. Revenue</span>
+                                    </div>
+                                    <div class="suggestion-stat">
+                                        <span class="suggestion-value">90%</span>
+                                        <span class="suggestion-label">Confidence</span>
+                                    </div>
+                                    <div class="suggestion-stat">
+                                        <span class="suggestion-value">45+</span>
+                                        <span class="suggestion-label">Customers</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="suggestion-card">
+                                <div class="suggestion-location">SM City Baliuag Vicinity</div>
+                                <div>Mall-goers and staff, consistent traffic throughout the day</div>
+                                <div class="weather-info">
+                                    <span class="weather-icon">🌤️</span>
+                                    <span>31°C, Partly Cloudy</span>
+                                </div>
+                                <div class="suggestion-stats">
+                                    <div class="suggestion-stat">
+                                        <span class="suggestion-value">₱1100+</span>
+                                        <span class="suggestion-label">Est. Revenue</span>
+                                    </div>
+                                    <div class="suggestion-stat">
+                                        <span class="suggestion-value">87%</span>
+                                        <span class="suggestion-label">Confidence</span>
+                                    </div>
+                                    <div class="suggestion-stat">
+                                        <span class="suggestion-value">40+</span>
+                                        <span class="suggestion-label">Customers</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="suggestion-card">
+                                <div class="suggestion-location">Baliuag Bus Terminal <span class="badge badge-new">New</span></div>
+                                <div>Commuters and drivers, steady flow throughout day</div>
+                                <div class="weather-info">
+                                    <span class="weather-icon">🌤️</span>
+                                    <span>30°C, Partly Cloudy</span>
+                                </div>
+                                <div class="suggestion-stats">
+                                    <div class="suggestion-stat">
+                                        <span class="suggestion-value">₱950+</span>
+                                        <span class="suggestion-label">Est. Revenue</span>
+                                    </div>
+                                    <div class="suggestion-stat">
+                                        <span class="suggestion-value">82%</span>
+                                        <span class="suggestion-label">Confidence</span>
+                                    </div>
+                                    <div class="suggestion-stat">
+                                        <span class="suggestion-value">35+</span>
+                                        <span class="suggestion-label">Customers</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Historical Performance Section -->
+                    <div class="historical-section">
+                        <div class="historical-header">
+                            <div class="historical-title">Your Top Performing Locations in Baliuag</div>
+                            <button class="btn btn-light btn-sm">View All Locations</button>
+                        </div>
+                        
+                        <div class="performance-grid">
+                            <div class="performance-card">
+                                <div class="performance-location">Baliuag University</div>
+                                <div class="performance-metric">₱1,620</div>
+                                <div class="performance-label">Average Daily Revenue</div>
+                            </div>
+                            
+                            <div class="performance-card">
+                                <div class="performance-location">Baliuag Public Market</div>
+                                <div class="performance-metric">₱1,450</div>
+                                <div class="performance-label">Average Daily Revenue</div>
+                            </div>
+                            
+                            <div class="performance-card">
+                                <div class="performance-location">SM City Baliuag</div>
+                                <div class="performance-metric">₱1,380</div>
+                                <div class="performance-label">Average Daily Revenue</div>
+                            </div>
+                            
+                            <div class="performance-card">
+                                <div class="performance-location">Baliuag Town Plaza</div>
+                                <div class="performance-metric">₱1,120</div>
+                                <div class="performance-label">Average Daily Revenue</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- AI Recommendations Section -->
+                    <div class="ai-recommendations">
+                        <div class="recommendations-header">
+                            <div class="recommendations-title"><i>🤖</i> Smart Insights & Recommendations</div>
+                            <button class="btn btn-primary btn-sm">Refresh Insights</button>
+                        </div>
+                        
+                        <div class="recommendation-cards">
+                            <div class="recommendation-card">
+                                <div class="recommendation-title"><i>📈</i> Sales Opportunity</div>
+                                <div class="recommendation-content">
+                                    Consider adding iced coffee options for afternoon sales. With rising temperatures in Baliuag, demand for cold beverages has increased 25% in the last two weeks.
+                                </div>
+                                <div class="recommendation-actions">
+                                    <button class="btn btn-primary btn-sm">Apply Suggestion</button>
+                                    <div class="ai-confidence">
+                                        <span>AI Confidence</span>
+                                        <div class="confidence-indicator">
+                                            <div class="confidence-level" style="width: 92%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="recommendation-card">
+                                <div class="recommendation-title"><i>🕒</i> Timing Optimization</div>
+                                <div class="recommendation-content">
+                                    Extending your hours at Baliuag University until 7:00PM could capture the evening student crowd. Analysis shows 30% of students have evening classes this semester.
+                                </div>
+                                <div class="recommendation-actions">
+                                    <button class="btn btn-primary btn-sm">Apply Suggestion</button>
+                                    <div class="ai-confidence">
+                                        <span>AI Confidence</span>
+                                        <div class="confidence-indicator">
+                                            <div class="confidence-level" style="width: 88%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="recommendation-card">
+                                <div class="recommendation-title"><i>☁️</i> Weather Alert</div>
+                                <div class="recommendation-content">
+                                    Forecasted rain tomorrow afternoon may reduce foot traffic by 35%. Consider stocking more hot beverages and focusing on covered areas near Baliuag Public Market.
+                                </div>
+                                <div class="recommendation-actions">
+                                    <button class="btn btn-primary btn-sm">Plan Alternative Route</button>
+                                    <div class="ai-confidence">
+                                        <span>AI Confidence</span>
+                                        <div class="confidence-indicator">
+                                            <div class="confidence-level" style="width: 95%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="recommendation-card">
+                                <div class="recommendation-title"><i>🏙️</i> New Location</div>
+                                <div class="recommendation-content">
+                                    The new BPO office near Poblacion has 200+ employees. Based on similar locations, positioning your coffee cart there could generate ~₱1000+ daily revenue.
+                                </div>
+                                <div class="recommendation-actions">
+                                    <button class="btn btn-primary btn-sm">Add To Route</button>
+                                    <div class="ai-confidence">
+                                        <span>AI Confidence</span>
+                                        <div class="confidence-indicator">
+                                            <div class="confidence-level" style="width: 80%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Dynamic Pricing Section -->
+                    <div class="dynamic-pricing">
+                        <div class="pricing-header">
+                            <div class="pricing-title"><i>💰</i> Dynamic Pricing Suggestions</div>
+                            <button class="btn btn-primary btn-sm">Update Pricing</button>
+                        </div>
+                        
+                        <div class="pricing-cards">
+                            <div class="pricing-card">
+                                <div class="pricing-product">Hot Coffee</div>
+                                <div class="current-price">₱35.00</div>
+                                <div class="suggested-price">₱38.00 ↑</div>
+                                <div class="price-reasoning">High morning demand</div>
+                            </div>
+                            
+                            <div class="pricing-card">
+                                <div class="pricing-product">Iced Coffee</div>
+                                <div class="current-price">₱45.00</div>
+                                <div class="suggested-price">₱50.00 ↑</div>
+                                <div class="price-reasoning">Popular afternoon option</div>
+                            </div>
+                            
+                            <div class="pricing-card">
+                                <div class="pricing-product">Shawarma Regular</div>
+                                <div class="current-price">₱75.00</div>
+                                <div class="suggested-price">₱75.00 =</div>
+                                <div class="price-reasoning">Stable demand</div>
+                            </div>
+                            
+                            <div class="pricing-card">
+                                <div class="pricing-product">Student Combo</div>
+                                <div class="current-price">₱95.00</div>
+                                <div class="suggested-price">₱90.00 ↓</div>
+                                <div class="price-reasoning">Increase campus volume</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Sidebar Toggle Button for Mobile -->
+    <button class="sidebar-toggle">≡</button>
+    
+    <!-- Scripts -->
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.burger').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+        
+        // Mobile sidebar toggle
+        document.querySelector('.sidebar-toggle').addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('active');
+        });
+        
+        // Charts
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sales by Hour Chart
+            const salesByHourCtx = document.getElementById('salesByHourChart').getContext('2d');
+            const salesByHourChart = new Chart(salesByHourCtx, {
+                type: 'line',
+                data: {
+                    labels: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm'],
+                    datasets: [{
+                        label: 'Sales (₱)',
+                        data: [180, 320, 420, 380, 250, 290, 350, 320, 230, 190, 240, 280, 210],
+                        backgroundColor: 'rgba(46, 125, 50, 0.1)',
+                        borderColor: 'rgba(46, 125, 50, 1)',
+                        borderWidth: 2,
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                drawBorder: false
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Location Performance Chart
+            const locationPerformanceCtx = document.getElementById('locationPerformanceChart').getContext('2d');
+            const locationPerformanceChart = new Chart(locationPerformanceCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Baliuag University', 'Public Market', 'SM City', 'Town Plaza', 'Bus Terminal'],
+                    datasets: [{
+                        label: 'Revenue (₱)',
+                        data: [1620, 1450, 1380, 1120, 980],
+                        backgroundColor: 'rgba(255, 143, 0, 0.8)',
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                drawBorder: false
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
