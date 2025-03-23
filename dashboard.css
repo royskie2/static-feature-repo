@@ -1,4 +1,14 @@
+/* General Responsive Adjustments */
+@media (max-width: 480px) {
+    .dashboard-header, .date-filter, .stats-cards, .data-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
+    .stat-card, .chart-container, .suggestion-card, .pricing-card {
+        width: 100%;
+    }
+}
 :root {
     --primary: #2E7D32;
     --primary-light: #60ad5e;
@@ -1015,16 +1025,6 @@ input:checked + .toggle-slider:before {
         left: 0;
     }
 }
-/* General Responsive Adjustments */
-@media (max-width: 480px) {
-    .dashboard-header, .date-filter, .stats-cards, .data-section {
-        flex-direction: column;
-        align-items: flex-start;
-    }
 
-    .stat-card, .chart-container, .suggestion-card, .pricing-card {
-        width: 100%;
-    }
-}
 
 
